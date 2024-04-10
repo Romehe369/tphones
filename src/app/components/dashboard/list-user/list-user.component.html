@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <h2 class="text-center fontTitle">Listar Eliminar</h2>
+    <h2 class="text-center fontTitle">Listar y Eliminar</h2>
     <div class="card">
         <div class="card-body">
             <div class="row">
@@ -19,7 +19,7 @@
                         <td>{{user.apellido}}</td>
                         <td>{{user.correo}}</td>
                         <td>{{user.numero}}</td>
-                        <td><button class="btn btn-danger text-white" (click)="Eliminar(user.id_usuario!)">Borrar</button>&nbsp;<button class="btn btn-info text-white" (click)="Seleccionar(user.id_usuario!)">Seleccionar</button></td>
+                        <td><button class="btn btn-danger text-white" (click)="Eliminar(user.id_usuario!)">Borrar</button>&nbsp;<button class="btn btn-info text-white" routerLink="/edit/{{ user.id_usuario }}" >Seleccionar</button></td>
                       </tr>
                     </tbody>
                   </table>

@@ -1,1 +1,35 @@
-<p>add-edit works!</p>
+<div class="row mt-1">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 25rem;">
+            <div class="card-header text-center">{{ operacion }} Producto</div>
+            <div class="card-body">
+                <form [formGroup]="Form" (ngSubmit)="addProduct()">
+                    <input formControlName="nombre" type="text" class="form-control" placeholder="Ingrese nombre">
+                    <span *ngIf="Form.get('nombre')?.hasError('required') && Form.get('nombre')?.touched">
+                        El campo nombre es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="apellido" type="text" class="form-control mt-2" placeholder="Ingrese descripcion">
+                    <span *ngIf="Form.get('apellido')?.hasError('required') && Form.get('apellido')?.touched">
+                        El campo descripcion es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="correo" type="text" class="form-control mt-2" placeholder="Ingrese precio">
+                    <span *ngIf="Form.get('correo')?.hasError('required') && Form.get('correo')?.touched">
+                        El campo correo es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="numero" type="number" class="form-control mt-2" placeholder="Ingrese numero">
+                    <span *ngIf="Form.get('numero')?.hasError('required') && Form.get('numero')?.touched">
+                        El campo numero es <strong>requerido</strong>
+                    </span>
+                    <div class="row mt-2 text-center">
+                        <div class="col-lg-6">
+                            <button routerLink="/" type="button" class="btn btn-secondary">Volver</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button [disabled]="Form.invalid" type="submit" class="btn btn-primary">Aceptar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

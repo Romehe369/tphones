@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UsuarioService } from '../../../services/usuario.service';
 import { Usuario } from '../../../interface/usuario';
 import { CommonModule} from '@angular/common';
@@ -8,7 +8,7 @@ import { CommonModule} from '@angular/common';
 @Component({
   selector: 'app-list-user',
   standalone: true,
-  imports: [FormsModule, CommonModule, ReactiveFormsModule],
+  imports: [FormsModule, CommonModule, ReactiveFormsModule,RouterLink],
   templateUrl: './list-user.component.html',
   styleUrl: './list-user.component.css'
 })
@@ -65,8 +65,8 @@ export class ListUserComponent implements OnInit{
       this.router.navigate(['/']);
     })
   }
-  Seleccionar(id_usuario:number){
+  /*Seleccionar(id_usuario:number){
     this.router.navigate(['/main']);
-  }
+  }*/
 
 }

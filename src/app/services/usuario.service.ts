@@ -20,10 +20,10 @@ export class UsuarioService {
   eliminar(id_usuario:number): Observable<void>{
     return this.http.get<void>(`${this.url}eliminar.php?id_usuario=${id_usuario}`);
   }
- seleccionar(id_usuario:number): Observable<Usuario>{
-    return this.http.get<Usuario>(`${this.url}seleccionar.php?id_usuario=${id_usuario}`);
+  seleccionar(id_usuario:number): Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(`${this.url}seleccionar.php?id_usuario=${id_usuario}`);
   }
-  update(id_usuario: number,usuario:Usuario):Observable<void>{
-    return this.http.put<void>(`${this.url}update.php?id_usuario=${id_usuario}`, JSON.stringify(usuario));
+  update(usuario:Usuario):Observable<void>{
+    return this.http.put<void>(`${this.url}update.php`, JSON.stringify(usuario));
   }
 }
